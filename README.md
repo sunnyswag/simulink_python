@@ -16,9 +16,9 @@
 
 * ##### rl模块测试
 
-  使用的是经典的[CartPole](./some_simulink_model/rlCartPoleSimscapeModel.slx)模型
+  ~~使用的是经典的[CartPole](./some_simulink_model/rlCartPoleSimscapeModel.slx)模型~~
 
-
+  在调bug无果之后，准备先试试这个[项目](https://github.com/qLience/AI-Pump-for-Underfloor-Heating-systems)
 
 
 
@@ -30,3 +30,4 @@
 * [Load Predefined Simulink Environments](<https://www.mathworks.com/help/reinforcement-learning/ug/create-predefined-simulink-environments.html>)
 * [Train DDPG Agent to Swing Up and Balance Cart-Pole System](<https://www.mathworks.com/help/reinforcement-learning/ug/train-ddpg-agent-to-swing-up-and-balance-cart-pole-system.html>)
 
+*  [qLience / AI-Pump-for-Underfloor-Heating-systems](https://github.com/qLience/AI-Pump-for-Underfloor-Heating-systems)

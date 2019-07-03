@@ -1,7 +1,7 @@
 clc;
 clear;
 close all;
-open_system('../some_simulink_model/example')
+open_system('../some_simulink_model/example.slx')
 
 sim_time_step = 0.01;
 
@@ -9,12 +9,11 @@ sim_time_step = 0.01;
 set_param(gcs,'SimulationCommand','start','SimulationCommand','pause');
 
 % open a server, it will block until a client connect to it
-s = tcpip('127.0.0.1', 54320,  'NetworkRole', 'server');
+%s = tcpip('127.0.0.1', 54320,  'NetworkRole', 'server');
+s = tcpip('127.0.0.1', 54320, 'Timeout', 60,'InputBufferSize',10240);
 fopen(s);
-
-count=0;
 % main loop
-while  count<100 % can be changed      
+while(1) % can be changed   
     while(1) %loop, until read some data
         nBytes = get(s,'BytesAvailable');
         if nBytes>0
@@ -26,17 +25,17 @@ while  count<100 % can be changed
     if isempty(data)
         data=0;
     end
+
     % set a paramter in the simulink model using the data get from python
-    set_param('example/K','Gain',num2str(data));
+    set_param('example/K','Gain',num2str(data))
         
     % run the simulink model for a step
     set_param(gcs, 'SimulationCommand', 'step');  
     
     % puase the simulink model and send some data to python
-    pause(0.1);
+    pause(1);
     u=states.data(end,:);
     fwrite(s, jsonencode(u));
-    count=count+1;
 end
-fclose(s);
+
 
