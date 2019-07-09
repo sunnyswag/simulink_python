@@ -18,9 +18,21 @@
 
   ~~使用的是经典的[CartPole](./some_simulink_model/rlCartPoleSimscapeModel.slx)模型~~
 
-  在调bug无果之后，准备先试试这个[项目](https://github.com/qLience/AI-Pump-for-Underfloor-Heating-systems)
+  在调bug无果之后，准备先试试这个[项目](https://github.com/qLience/AI-Pump-for-Underfloor-Heating-systems) 
 
+* ##### 尝试项目
 
+  项目缺少'svdutilitieslib' matlab，提示install 'Embedded Coder Support Package for ARM Cortex-A Processors，安装完之后发现无法打开matlab
+
+  将中文用户名修改为英文之后，问题解决，打开matlab之后发现所安装的模块没起作用，继续安装其他可能有用的模块
+
+* ##### 在服务器是部署安装matlab
+
+  找到了两篇很好的博客，一个是[如何安装](<https://blog.csdn.net/u011387593/article/details/84883474>)，一个是[更好的使用matlab](<https://www.cnblogs.com/yinxiangnan-charles/p/5625463.html>)，如何本地用不了的话就准备用服务器上的matlab了
+
+* ##### tips：
+
+  Google之后没有发现使用Pymodelica搭建模型的RL项目，不准备使用modelica入手
 
 ### 参考链接
 
