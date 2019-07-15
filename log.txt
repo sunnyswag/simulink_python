@@ -1,0 +1,134 @@
+1. python main.py -tau 20 -model tf_dqnet -env shtl2
+
+grid@server-246:/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-s                                                                                                                                                                             ystems$ python main.py -tau 20 -model tf_dqnet -env shtl2
+Socket bind complete
+Socket now listening
+waiting 20 seconds for response from client at sender port  50000
+sudo apt-get install python3-tk Connected by ('127.0.0.1', 55734) on sender port                                                                                                                                                                              50000
+Socket bind complete
+Socket now listening
+waiting for response from client at receiver port  50001
+Connected by ('127.0.0.1', 56514) on receiver port 50001
+
+2019-07-15 10:25:30.866063: I tensorflow/core/platform/cpu_feature_guard.cc:141]                                                                                                                                                                              Your CPU supports instructions that this TensorFlow binary was not compiled to                                                                                                                                                                              use: AVX2 AVX512F FMA
+2019-07-15 10:25:31.052497: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1                                                                                                                                                                             392] Found device 0 with properties:
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.6325
+pciBusID: 0000:3b:00.0
+totalMemory: 10.92GiB freeMemory: 10.77GiB
+2019-07-15 10:25:31.197450: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1                                                                                                                                                                             392] Found device 1 with properties:
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.6325
+pciBusID: 0000:d9:00.0
+totalMemory: 10.92GiB freeMemory: 10.77GiB
+2019-07-15 10:25:31.198892: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1                                                                                                                                                                             471] Adding visible gpu devices: 0, 1
+2019-07-15 10:25:32.136228: I tensorflow/core/common_runtime/gpu/gpu_device.cc:9                                                                                                                                                                             52] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-15 10:25:32.136285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:9                                                                                                                                                                             58]      0 1
+2019-07-15 10:25:32.136295: I tensorflow/core/common_runtime/gpu/gpu_device.cc:9                                                                                                                                                                             71] 0:   N Y
+2019-07-15 10:25:32.136303: I tensorflow/core/common_runtime/gpu/gpu_device.cc:9                                                                                                                                                                             71] 1:   Y N
+2019-07-15 10:25:32.136455: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1                                                                                                                                                                             084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 wit                                                                                                                                                                             h 10424 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bu                                                                                                                                                                             s id: 0000:3b:00.0, compute capability: 6.1)
+2019-07-15 10:25:32.331913: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1                                                                                                                                                                             084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 wit                                                                                                                                                                             h 10424 MB memory) -> physical GPU (device: 1, name: GeForce GTX 1080 Ti, pci bu                                                                                                                                                                             s id: 0000:d9:00.0, compute capability: 6.1)
+2019-07-15 10:25:32.567577: E tensorflow/core/util/events_writer.cc:104] Write f                                                                                                                                                                             ailed because file could not be opened.
+2019-07-15 10:25:32.584916: E tensorflow/core/util/events_writer.cc:104] Write f                                                                                                                                                                             ailed because file could not be opened.
+------------------------------------------------
+iteration  0
+action is  1
+State inputs to brain
+[0.45714285714285713, 0.5, 160.0, 0, 0.12857142857142856, 0.5, 45.0, 0, 0.3]
+Enrionment Values are [ T1 , T2 , T3 , T4 , Tmix, Treturn ]
+Enrionment Values are [ 16.0 , 4.5 , 4.6 , 4.7 , 24.0 , 16.0 ]
+except  called  0
+distance1 is  6.0
+distance2 is  17.5
+distance3 is  17.4
+distance4 is  17.3
+reward is  -0.8
+2019-07-15 10:25:33.056841: W tensorflow/core/framework/op_kernel.cc:1318] OP_RE                                                                                                                                                                             QUIRES failed at save_restore_v2_ops.cc:109 : Permission denied: ./saves/weights                                                                                                                                                                             /default_name.data-00000-of-00001.tempstate2590057882945550545; Permission denie                                                                                                                                                                             d
+Traceback (most recent call last):
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/client/s                                                                                                                                                                             ession.py", line 1322, in _do_call
+    return fn(*args)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/client/s                                                                                                                                                                             ession.py", line 1307, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/client/s                                                                                                                                                                             ession.py", line 1409, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.PermissionDeniedError: ./saves/weights/d                                                                                                                                                                             efault_name.data-00000-of-00001.tempstate2590057882945550545; Permission denied
+         [[Node: save/SaveV2 = SaveV2[dtypes=[DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_F                                                                                                                                                                             LOAT, DT_FLOAT, ..., DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT], _device=                                                                                                                                                                             "/job:localhost/replica:0/task:0/device:CPU:0"](_arg_save/Const_0_0, save/SaveV2                                                                                                                                                                             /tensor_names, save/SaveV2/shape_and_slices, beta1_power/_9, beta2_power/_11, fc                                                                                                                                                                             1/biases/_13, fc1/biases/Adam/_15, fc1/biases/Adam_1/_17, fc1/weights/_19, fc1/w                                                                                                                                                                             eights/Adam/_21, fc1/weights/Adam_1/_23, fc2/biases/_25, fc2/biases/Adam/_27, fc                                                                                                                                                                             2/biases/Adam_1/_29, fc2/weights/_31, fc2/weights/Adam/_33, fc2/weights/Adam_1/_                                                                                                                                                                             35, global_step/_37, q/biases/_39, q/biases/Adam/_41, q/biases/Adam_1/_43, q/wei                                                                                                                                                                             ghts/_45, q/weights/Adam/_47, q/weights/Adam_1/_49)]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 247, in <module>
+    save_orchestrator.save_brain(os.path.join(SAVES_BRAIN, args.ewe))
+  File "/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-systems/m                                                                                                                                                                             odels/eligibility_trace_tf/infra/save_orchestrator.py", line 12, in save_brain
+    self.brain.save(filename)
+  File "/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-systems/m                                                                                                                                                                             odels/eligibility_trace_tf/ai/tf/ai_self_tf.py", line 116, in save
+    self.saver.save(self.sess, filename)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/training                                                                                                                                                                             /saver.py", line 1652, in save
+    {self.saver_def.filename_tensor_name: checkpoint_file})
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/client/s                                                                                                                                                                             ession.py", line 900, in run
+    run_metadata_ptr)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/client/s                                                                                                                                                                             ession.py", line 1135, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/client/s                                                                                                                                                                             ession.py", line 1316, in _do_run
+    run_metadata)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/client/s                                                                                                                                                                             ession.py", line 1335, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.PermissionDeniedError: ./saves/weights/d                                                                                                                                                                             efault_name.data-00000-of-00001.tempstate2590057882945550545; Permission denied
+         [[Node: save/SaveV2 = SaveV2[dtypes=[DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_F                                                                                                                                                                             LOAT, DT_FLOAT, ..., DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT], _device=                                                                                                                                                                             "/job:localhost/replica:0/task:0/device:CPU:0"](_arg_save/Const_0_0, save/SaveV2                                                                                                                                                                             /tensor_names, save/SaveV2/shape_and_slices, beta1_power/_9, beta2_power/_11, fc                                                                                                                                                                             1/biases/_13, fc1/biases/Adam/_15, fc1/biases/Adam_1/_17, fc1/weights/_19, fc1/w                                                                                                                                                                             eights/Adam/_21, fc1/weights/Adam_1/_23, fc2/biases/_25, fc2/biases/Adam/_27, fc                                                                                                                                                                             2/biases/Adam_1/_29, fc2/weights/_31, fc2/weights/Adam/_33, fc2/weights/Adam_1/_                                                                                                                                                                             35, global_step/_37, q/biases/_39, q/biases/Adam/_41, q/biases/Adam_1/_43, q/wei                                                                                                                                                                             ghts/_45, q/weights/Adam/_47, q/weights/Adam_1/_49)]]
+
+Caused by op 'save/SaveV2', defined at:
+  File "main.py", line 165, in <module>
+    ai = AI(params, Dqn)
+  File "/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-systems/m                                                                                                                                                                             odels/eligibility_trace_tf/world/ai.py", line 5, in __init__
+    self.brain = dqn_initializator(params)
+  File "/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-systems/m                                                                                                                                                                             odels/eligibility_trace_tf/ai/tf/ai_self_tf.py", line 52, in __init__
+    self.saver = tf.train.Saver()
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/training                                                                                                                                                                             /saver.py", line 1284, in __init__
+    self.build()
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/training                                                                                                                                                                             /saver.py", line 1296, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/training                                                                                                                                                                             /saver.py", line 1333, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/training                                                                                                                                                                             /saver.py", line 778, in _build_internal
+    save_tensor = self._AddSaveOps(filename_tensor, saveables)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/training                                                                                                                                                                             /saver.py", line 278, in _AddSaveOps
+    save = self.save_op(filename_tensor, saveables)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/training                                                                                                                                                                             /saver.py", line 194, in save_op
+    tensors)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/ops/gen_                                                                                                                                                                             io_ops.py", line 1687, in save_v2
+    shape_and_slices=shape_and_slices, tensors=tensors, name=name)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/framewor                                                                                                                                                                             k/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/framewor                                                                                                                                                                             k/ops.py", line 3414, in create_op
+    op_def=op_def)
+  File "/home/grid/.local/lib/python3.6/site-packages/tensorflow/python/framewor                                                                                                                                                                             k/ops.py", line 1740, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-                                                                                                                                                                             access
+
+PermissionDeniedError (see above for traceback): ./saves/weights/default_name.da                                                                                                                                                                             ta-00000-of-00001.tempstate2590057882945550545; Permission denied
+         [[Node: save/SaveV2 = SaveV2[dtypes=[DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_F                                                                                                                                                                             LOAT, DT_FLOAT, ..., DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT], _device=                                                                                                                                                                             "/job:localhost/replica:0/task:0/device:CPU:0"](_arg_save/Const_0_0, save/SaveV2                                                                                                                                                                             /tensor_names, save/SaveV2/shape_and_slices, beta1_power/_9, beta2_power/_11, fc                                                                                                                                                                             1/biases/_13, fc1/biases/Adam/_15, fc1/biases/Adam_1/_17, fc1/weights/_19, fc1/w                                                                                                                                                                             eights/Adam/_21, fc1/weights/Adam_1/_23, fc2/biases/_25, fc2/biases/Adam/_27, fc                                                                                                                                                                             2/biases/Adam_1/_29, fc2/weights/_31, fc2/weights/Adam/_33, fc2/weights/Adam_1/_                                                                                                                                                                             35, global_step/_37, q/biases/_39, q/biases/Adam/_41, q/biases/Adam_1/_43, q/wei                                                                                                                                                                             ghts/_45, q/weights/Adam/_47, q/weights/Adam_1/_49)]]
+无法获取管理员权限进行文件存储
+
+2.python main.py -tau 20 -model torch_dqn -env shtl2
+
+grid@server-246:/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-s                                                                                                                                                                             ystems$ python main.py -tau 20 -model torch_dqn -env shtl2
+Socket bind complete
+Socket now listening
+waiting 20 seconds for response from client at sender port  50000
+Connected by ('127.0.0.1', 37414) on sender port 50000
+Socket bind complete
+Socket now listening
+waiting for response from client at receiver port  50001
+Connected by ('127.0.0.1', 38194) on receiver port 50001
+------------------------------------------------
+iteration  0
+State inputs to brain
+[0.45714285714285713, 0.5, 160.0, 0, 0.12857142857142856, 0.5, 45.0, 0, 0.3]
+Traceback (most recent call last):
+  File "main.py", line 243, in <module>
+    training.update()
+  File "/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-systems/m                                                                                                                                                                             odels/training.py", line 38, in update
+    action = self.brain.update(self.last_reward, state)
+  File "/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-systems/m                                                                                                                                                                             odels/DRL_Qnetwork.py", line 169, in update
+    action = self.softmax_body(new_state)
+  File "/lab-pool/Jupyter_Workspace/hhq/AI-Pump-for-Underfloor-Heating-systems/m                                                                                                                                                                             odels/DRL_Qnetwork.py", line 119, in softmax_body
+    action = torch.distributions.multinomial(probs)
+TypeError: 'module' object is not callable
+版本太老

@@ -28,7 +28,16 @@
 
 * ##### 在服务器是部署安装matlab
 
-  找到了两篇很好的博客，一个是[如何安装](<https://blog.csdn.net/u011387593/article/details/84883474>)，一个是[更好的使用matlab](<https://www.cnblogs.com/yinxiangnan-charles/p/5625463.html>)，如何本地用不了的话就准备用服务器上的matlab了
+  找到了两篇很好的博客，一个是[如何安装](<https://blog.csdn.net/u011387593/article/details/84883474>)，一个是[更好的使用matlab](<https://www.cnblogs.com/yinxiangnan-charles/p/5625463.html>)，如果本地用不了的话就准备用服务器上的matlab了
+
+* ##### 调试并开始训练
+
+  分别跑了pytorch版本和tensorflow版本的dqn
+
+  1. 发现其pytorch版本非常陈旧，准备自己重写
+  2. tensorflow版本的没有问题，出现权限获取失败的错误，准备chmod那个目录，但现在显卡似乎not free，准备待会再跑
+
+  3. 两者的报错日志记录[在这](log.txt)B.T.W，服务器打开matlab10s，除了操作不方便意外没什么缺点
 
 * ##### tips：
 
