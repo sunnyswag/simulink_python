@@ -36,8 +36,17 @@
 
   1. 发现其pytorch版本非常陈旧，准备自己重写
   2. tensorflow版本的没有问题，出现权限获取失败的错误，准备chmod那个目录，但现在显卡似乎not free，准备待会再跑
+  3. 两者的报错日志记录[在这](log.txt)B.T.W，服务器打开matlab 耗时10s，除了操作不方便意外没什么缺点
 
-  3. 两者的报错日志记录[在这](log.txt)B.T.W，服务器打开matlab10s，除了操作不方便意外没什么缺点
+* ##### 训练成功
+
+  tensorflow 修改目录权限后跑通了，但还是报了Write failed because file could not be opened的下一步准备进行一些修改吧(包括环境和网络)
+
+  截图如下:
+
+  ![train_success2](assets\train_success1.png)
+
+  ![train_success2](assets\train_success2.png)
 
 * ##### tips：
 
