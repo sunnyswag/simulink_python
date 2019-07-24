@@ -44,9 +44,9 @@
 
   截图如下:
 
-  ![train_success2](assets\train_success1.png)
+  ![train_success2](./assets/train_success1.png)
 
-  ![train_success2](assets\train_success2.png)
+  ![train_success2](./assets/train_success2.png)
 
 * ##### tips：
 
