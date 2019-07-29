@@ -48,9 +48,13 @@
 
   ![train_success2](./assets/train_success2.png)
 
+* [有关rl_attention的一些论文](attention_rl)，有时间再去看吧
+
 * ##### tips：
 
   Google之后没有发现使用Pymodelica搭建模型的RL项目，不准备使用modelica入手
+
+  [关于attention的调查](./attention_rl)
 
 ### 参考链接
 
