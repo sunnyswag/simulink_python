@@ -53,6 +53,7 @@
 * ##### 开始重写其代码并进行训练
 
   1. 代码放置在[test文件夹](./test)中,初步将其action_space和state_space分别定为3,3。通信的频率和间歇性通信还有待处理。在这之后准备用matlab写的CartPole进行测试
+  2. 发现一个问题: python接受state信息时，simulink会将那段时间所累积的所有state信息发送至python端,而simulink只要接收到python的action信息就会立即采取动作。目前想到的解决方法是：将所有的state信息累计的每个状态求平均值。不过这样也就解决了如何让simulink挂机的问题。 
 
 * ##### tips：
 
