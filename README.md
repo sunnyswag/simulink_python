@@ -48,7 +48,11 @@
 
   ![train_success2](./assets/train_success2.png)
 
-* [有关rl_attention的一些论文](attention_rl)，有时间再去看吧
+* [有关rl_attention的一些论文](./attention_rl.md)，有时间再去看吧
+
+* ##### 开始重写其代码并进行训练
+
+  1. 代码放置在[test文件夹](./test)中,初步将其action_space和state_space分别定为3,3。通信的频率和间歇性通信还有待处理。在这之后准备用matlab写的CartPole进行测试
 
 * ##### tips：
 
