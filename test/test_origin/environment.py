@@ -4,6 +4,7 @@ import struct
 import array
 import time
 import random
+import numpy as np
 
 class Environment:
     def __init__(self, env_name):
@@ -14,7 +15,7 @@ class Environment:
         self.recvConn = 0 # socket 接收数据的对象
         self.recvPort = 50001
 
-        self.current_state = [0,0,0,0,0,0]
+        self.current_state = [0,0,0]
 
     # 创建socket服务
     def create_sockets_server(self):
@@ -53,6 +54,10 @@ class Environment:
     def _receive_state(self):
         data = self.recvConn.recv(2048)
         data = array.array('d', data)
+        # 将返回的多次state信息求平均
+        data = np.array(data).reshape(-1,3)
+        data = list(data.mean(axis=0))
+        data = [round(i, 2) for i in data]
         return data
 
     # 计算奖励值
@@ -65,14 +70,22 @@ class Environment:
         Tmix_UL = 44 # Upper limit
 
         distance = abs(room_goal - T1)
-        if distance > 7 or Tmix < Tmix_LL or Tmix > Tmix_UL:
-            reward = -1
-        elif 0.5 < distance <= 7:
-            reward = (7 - distance) * 0.5
-        else:
-            reward = 7 - distance
+        if Tmix < Tmix_LL or Tmix > Tmix_UL :
+            if distance >= 7 :
+                reward = -1 * distance * 0.1 
+            else :
+                reward = -1
+        else :
+            if distance >= 7 :
+                reward = -1 * distance * 0.1
+            elif 5 < distance < 7:
+                reward = (7 - distance) * 0.2
+            elif 1 < distance <= 5:
+                reward = (7 - distance) * 0.5
+            elif 0 <= distance <= 1:
+                reward = 7 - distance
 
-        return reward
+        return round(reward, 3)
 
     def step(self, action):
         self._send_action(action)
@@ -84,7 +97,6 @@ class Environment:
         done = False
         info = "normal"
         return self.current_state, reward, done, info
-        # [self.current_state[0],self.current_state[1],self.current_state[2]]
 
     def reset(self):
         self._send_action(random.randint(0,2))
